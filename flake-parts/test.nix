@@ -17,6 +17,9 @@
               self.homeModules.default
 
               {
+                rose-pine.chatterino.enable = true;
+                rose-pine.chatterino.variant = "rose-pine-moon";
+
                 rose-pine.tty.variant = "rose-pine-moon";
                 rose-pine.tty.bash.enable = true;
                 rose-pine.tty.zsh.enable = true;

@@ -76,6 +76,7 @@ Then pass it through your flake outputs and import the modules you need:
 
 | Home Manager module | Description |
 | --- | --- |
+| [`chatterino`](#chatterino) | Installs a Rose Pine Chatterino theme file. |
 | [`tty`](#tty-1) | Adds Linux TTY color setup scripts to shell init files. |
 | [`zellij`](#zellij) | Installs Rose Pine Zellij themes and optionally selects one. |
 
@@ -103,6 +104,27 @@ Upstream theme: [rose-pine/linux-tty](https://github.com/rose-pine/linux-tty)
 | `rose-pine.tty.src` | path | `rose-pine/linux-tty` | Source tree used to read `dist/<variant>.conf`. |
 
 ## Home Manager modules
+
+### Chatterino
+
+Installs a Rose Pine Chatterino theme into Chatterino's `Themes` folder. Open Chatterino and select the custom theme manually after applying your Home Manager configuration.
+
+Upstream theme: [nofishleft/rose-pine-chatterino](https://github.com/nofishleft/rose-pine-chatterino)
+
+```nix
+{
+  rose-pine.chatterino = {
+    enable = true;
+    variant = "rose-pine-moon";
+  };
+}
+```
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `rose-pine.chatterino.enable` | boolean | `false` | Installs the selected Chatterino theme. |
+| `rose-pine.chatterino.variant` | enum | `"rose-pine"` | Theme variant: `"rose-pine"`, `"rose-pine-dawn"`, or `"rose-pine-moon"`. |
+| `rose-pine.chatterino.src` | path | `nofishleft/rose-pine-chatterino` | Source tree used to install `dist/<variant>.json`. |
 
 ### TTY
 
