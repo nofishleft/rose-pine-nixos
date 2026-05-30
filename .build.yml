@@ -1,0 +1,28 @@
+image: alpine/latest
+secrets:
+  - c3ddf123-815c-4e33-8d53-c8d7f555d7c4
+  - 1d2c7a5c-c64c-4b16-a41c-9db7bd87fcd8
+sources:
+  - git@git.sr.ht:~phush/rose-pine-nixos
+submitter:
+  git.src.ht:
+    enabled: true
+    allow-refs:
+      - refs/heads/main
+      - "refs/tags/*"
+environment:
+  GIT_SSH_COMMAND: ssh -o StrictHostKeyChecking=no
+tasks:
+  - setup-ssh: |
+      mkdir -p ~/.ssh
+      cat > ~/.ssh/config <<'EOF'
+      Host github.com
+          HostName github.com
+          User git
+          IdentityFile ~/.ssh/1d2c7a5c-c64c-4b16-a41c-9db7bd87fcd8
+          IdentitiesOnly yes
+      EOF
+
+      chmod 600 ~/.ssh/config
+  - mirror: |
+      cd rose-pine-nixos && git push --force --prune git@github.com:nofishleft/rose-pine-nixos.git refs/heads/main:refs/heads/main 'refs/tags/*:refs/tags/*'
