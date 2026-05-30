@@ -12,6 +12,7 @@
 
             {
               rose-pine.zellij.enable = true;
+              rose-pine.zellij.variant = "rose-pine";
 
               home.username = "test";
               home.homeDirectory = "/tmp/test-home";
