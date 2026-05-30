@@ -28,6 +28,7 @@
           ./flake-parts/packages.nix
           ./flake-parts/overlay.nix
           ./flake-parts/home-module.nix
+          ./flake-parts/nixos-module.nix
           ./flake-parts/test.nix
         ];
 
