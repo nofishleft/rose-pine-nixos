@@ -77,6 +77,7 @@ Then pass it through your flake outputs and import the modules you need:
 | Home Manager module | Description |
 | --- | --- |
 | [`chatterino`](#chatterino) | Installs a Rose Pine Chatterino theme file. |
+| [`kitty`](#kitty) | Sets Kitty's built-in Rose Pine theme and installs the app icon. |
 | [`tty`](#tty-1) | Adds Linux TTY color setup scripts to shell init files. |
 | [`zellij`](#zellij) | Installs Rose Pine Zellij themes and optionally selects one. |
 
@@ -125,6 +126,27 @@ Upstream theme: [nofishleft/rose-pine-chatterino](https://github.com/nofishleft/
 | `rose-pine.chatterino.enable` | boolean | `false` | Installs the selected Chatterino theme. |
 | `rose-pine.chatterino.variant` | enum | `"rose-pine"` | Theme variant: `"rose-pine"`, `"rose-pine-dawn"`, or `"rose-pine-moon"`. |
 | `rose-pine.chatterino.src` | path | `nofishleft/rose-pine-chatterino` | Source tree used to install `dist/<variant>.json`. |
+
+### Kitty
+
+Sets Kitty's built-in Rose Pine theme and installs the Rose Pine app icon at `$XDG_CONFIG_HOME/kitty/kitty.app.png`.
+
+Upstream theme: [rose-pine/kitty](https://github.com/rose-pine/kitty)
+
+```nix
+{
+  rose-pine.kitty = {
+    enable = true;
+    variant = "rose-pine-moon";
+  };
+}
+```
+
+| Option | Type | Default | Description |
+| --- | --- | --- | --- |
+| `rose-pine.kitty.enable` | boolean | `false` | Enables the Kitty theme integration. |
+| `rose-pine.kitty.variant` | enum | `"rose-pine"` | Built-in Kitty theme file: `"rose-pine"`, `"rose-pine-dawn"`, or `"rose-pine-moon"`. |
+| `rose-pine.kitty.src` | path | `rose-pine/kitty` | Source tree used to install `icons/kitty.app@2x.png`. |
 
 ### TTY
 

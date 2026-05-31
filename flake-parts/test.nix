@@ -20,6 +20,9 @@
                 rose-pine.chatterino.enable = true;
                 rose-pine.chatterino.variant = "rose-pine-moon";
 
+                rose-pine.kitty.enable = true;
+                rose-pine.kitty.variant = "rose-pine-dawn";
+
                 rose-pine.tty.variant = "rose-pine-moon";
                 rose-pine.tty.bash.enable = true;
                 rose-pine.tty.zsh.enable = true;
