@@ -8,7 +8,7 @@ Add this flake as an input:
 
 ```nix
 {
-  inputs.rose-pine-nixos.url = "github:phush/rose-pine-nixos";
+  inputs.rose-pine-nixos.url = "github:nofishleft/rose-pine-nixos";
 }
 ```
 
@@ -21,7 +21,7 @@ To reuse your existing `nixpkgs` and `home-manager` pins, make this flake's inpu
     home-manager.url = "github:nix-community/home-manager";
 
     rose-pine-nixos = {
-      url = "github:phush/rose-pine-nixos";
+      url = "github:nofishleft/rose-pine-nixos";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
@@ -38,7 +38,7 @@ Then pass it through your flake outputs and import the modules you need:
     home-manager.url = "github:nix-community/home-manager";
 
     rose-pine-nixos = {
-      url = "github:phush/rose-pine-nixos";
+      url = "github:nofishleft/rose-pine-nixos";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
